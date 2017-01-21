@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+some_function = ->
+  console.log("I'm in another function")
+
+$ ->
+  $("#myButton").click ->
+     console.log("Hi there")
+     $('.container').toggle()
+
+     some_function()
+  
+     $.ajax
+       type: 'POST'
+       url: '/guides'
+       data: "guide[title]=Hey from coffeescript"
